@@ -17,11 +17,18 @@ class Timer {
   };
 
   tick = () => {
-    console.log("tick");
+    this.timeRemaining -= 1;
   };
+
+  get timeRemaining() {
+    return parseFloat(this.durationInput.value);
+  }
+  set timeRemaining(time) {
+    return (this.durationInput.value = time);
+  }
 }
 
-const durationInput = document.querySelector("#duration");
+const durationInput = document.querySelector("#durationInput");
 const startButton = document.querySelector("#start");
 const pauseButton = document.querySelector("#pause");
 
